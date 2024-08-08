@@ -1,5 +1,5 @@
-""" sempre quando utilizo um nome depois de from, isso significa que estou chamando
-uma biblioteca que possui uma classe em específico que quero utilizar. """
+""" sempre ao referenciar um nome depois de from, isso significa que está sendo chamando
+uma biblioteca que possui uma classe em específico que será utilizada. """
 
 from fastapi import FastAPI
 
