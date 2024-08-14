@@ -14,8 +14,6 @@ from ulid import ULID
 app = FastAPI()
 
 class Corrida(BaseModel):
-    """ na criação da corrida o id não existe, então será None inicialmente; 
-     depois que o objeto de corrida é criado e armazenado, o ID será gerado automaticamente """
     id: str 
     origem: str
     destino: str
