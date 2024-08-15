@@ -55,7 +55,7 @@ corridas: list[Corrida] = [
         valor=calculo_valor(8), 
         estado='Finalizada'),
 ]
-  
+""" Fornece as listas de corridas"""
 @app.get('/corridas')
 def corrida_lista() -> list[Corrida]:
     return corridas
@@ -98,7 +98,7 @@ def corrida_atualizar(id:str, corrida_atualizar: Corrida):
             raise HTTPException(status_code=400, detail='A corrida não pode ser alterada.')
     raise HTTPException(status_code=404, detail='Corrida não localizada!')
 
-
+""" Altera a corrida Requisitada para Em andamento """
 @app.post('/corridas/{id}/iniciar' )
 def iniciar(id:str) -> Corrida:
     for c in corridas:
@@ -109,6 +109,7 @@ def iniciar(id:str) -> Corrida:
             raise HTTPException(status_code=400, detail='A corrida só pode iniciar se estiver requisitada')
     raise HTTPException(status_code=404, detail='Corrida não localizada!')
 
+""" Altera a corrida Em andamento para Finalizada """
 @app.post('/corridas/{id}/finalizar')
 def finalizar(id:str) -> Corrida:
     for c in corridas:
